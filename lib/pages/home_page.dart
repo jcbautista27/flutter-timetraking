@@ -5,23 +5,32 @@ import 'package:time_traking/pages/extra_page.dart';
 import 'package:time_traking/pages/resumen_page.dart';
 import 'package:time_traking/providers/ui_provider.dart';
 import 'package:time_traking/widgets/custom_drawer.dart';
-import 'package:time_traking/widgets/custom_floatingbutton.dart';
+
 import 'package:time_traking/widgets/custom_navigatorbar.dart';
 
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
+  // static const textAppBar = 'Hour Traking';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).primaryColor,
-        elevation: 0,
-        title: const Text("Hour Traking",),
-      ),
       drawer: const CustomDrawer(),
+      appBar: AppBar(
+        backgroundColor: const Color(0xffEFEFEF),
+        elevation: 0,
+        // title: Text(textAppBar.toString(),),
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(Icons.more_vert_outlined, color: Colors.black,),
+            onPressed: () => Scaffold.of(context).openDrawer(),
+          )
+            
+        ),
+      ),
+      
       body: _HomePageBody(),
       backgroundColor: const Color(0xffEFEFEF),
       bottomNavigationBar: const CustomNavigatorBar(),

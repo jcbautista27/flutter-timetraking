@@ -24,6 +24,11 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           
           primaryColor: Colors.amber[800],
+          primarySwatch: Colors.amber,
+          // primaryIconTheme: IconThemeData(
+          //   color: Colors.black
+          // ),
+          // primaryColor: const Color(0xffEFEFEF),
           bottomNavigationBarTheme: const BottomNavigationBarThemeData(
             selectedItemColor: Colors.orange,
             
@@ -44,7 +49,6 @@ class MyApp extends StatelessWidget {
               fontWeight: FontWeight.bold,
               color: Color(0xFF030047),
             ),
-    
           )
         ),
         

@@ -16,14 +16,17 @@ class CustomDrawer extends StatelessWidget {
             DrawerHeader(
               // padding: EdgeInsets.fromLTRB(12, 12, 12, 6),
               decoration: const BoxDecoration(
-                // color: Colors.amber
+              image: DecorationImage(
+                image: AssetImage('assets/rnd.png'),
+                fit: BoxFit.fitWidth
+              )
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children:  [
                   CircleAvatar(
                     maxRadius: 46,
-                    backgroundColor: Colors.white,
+                    backgroundColor: Colors.amber[300],
                     child: Image.asset('assets/logo-renda.png'),
                   ),
 
@@ -33,8 +36,8 @@ class CustomDrawer extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
-                      Text("Juan Carlos", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),),
-                      Text("Administrador", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),),
+                      Text("Juan Carlos", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600),),
+                      Text("Administrador", style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w400),),
                     ],
                   )
                   
@@ -51,6 +54,7 @@ class CustomDrawer extends StatelessWidget {
                 Navigator.pop(context);
               },
             ),
+            const Divider(),
             ListTile(
               title: const Text('Cerrar Sesión'),
               leading: const Icon(Icons.logout_outlined),
